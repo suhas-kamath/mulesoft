@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 app.use(express.json())
 app.use(express.urlencoded());
 app.set("view engine", 'ejs');
-mongoose.connect('mongodb+srv://njclab:hqHJjK5zgDqyLNiD@cluster0.ns3tc.mongodb.net/movies-db?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://njclab:sTDqSwC-azQj3_@@cluster0.ns3tc.mongodb.net/movies-db?retryWrites=true&w=majority', {
     useNewUrlParser: true,
 })
 
