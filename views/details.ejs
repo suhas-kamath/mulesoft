@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= query %>
+    </title>
+</head>
+
+<body>
+    <ul>
+
+        <% movies.forEach((movie)=>{ %>
+            <li>
+
+                <div class="content">
+                    <span>Movie: </span>
+                    <%=movie.movieName %>
+                </div>
+                <div class="content">
+                    <span>Actor: </span>
+                    <%=movie.actor %>
+                </div>
+                <div class="content">
+                    <span>Actress: </span>
+                    <%=movie.actress %>
+                </div>
+                <div class="content">
+                    <span>Director:</span>
+                    <%=movie.director %>
+                </div>
+                <div class="content">
+                    <span>Year: </span>
+                    <%=movie.year %>
+                </div>
+            </li><br>
+            <%})%>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+</head>
+
+<body>
+    <form action="/search" method="get">
+        <div class="form-item">
+            <label for="searchField">Search </label>
+            <input type="text" name="search" id="searchField" autofocus>
+        </div>
+    </form>
+
+
+    <h1>All Movies</h1>
+    <ul>
+        <% movies.forEach((movie)=>{ %>
+            <li>
+                <a href="/movies/<%= movie.movieName %>">
+                    <%= movie.movieName %>
+                </a>
+            </li>
+            <%})%>
+    </ul>
+
+    <h1>Add Movie</h1>
+    <form action="/" method="post" onsubmit="return validate()">
+        <div class="form-item">
+            <label for="textField-1">Movie name</label>
+            <input type="text" name="movieName" id="textField-1" autofocus>
+        </div>
+        <div class="form-item">
+            <label for="textField-2">Actor Name</label>
+            <input type="text" name="actor" id="textField-2" autofocus>
+        </div>
+        <div class="form-item">
+            <label for="textField-3">Actress Name</label>
+            <input type="text" name="actress" id="textField-3" autofocus>
+        </div>
+        <div class="form-item">
+            <label for="textField-5">Released Year</label>
+            <input type="text" name="year" id="textField-5" autofocus>
+        </div>
+        <div class="form-item">
+            <label for="textField-4">Director Name</label>
+            <input type="text" name="director" id="textField-4" autofocus>
+        </div>
+        <input type="submit" value="Add">
+    </form>
+
+    <h1>Year Archive</h1>
+    <ul>
+        <% years.forEach((year)=>{ %>
+            <li>
+                <a href="/year/<%= year %>">
+                    <%= year %>
+                </a>
+            </li>
+            <%})%>
+    </ul>
+    <script>
+        var movie = document.getElementById("textField-1")
+        var actor = document.getElementById("textField-2")
+        var actress = document.getElementById("textField-3")
+        var year = document.getElementById("textField-4")
+        var director = document.getElementById("textField-5")
+
+        function validate() {
+            if (movie.value == '' || actor.value == '' || actress.value == '' || year.value == '' || director.value == '') return false;
+            return true;
+        }
+    </script>
+</body>
+
+</html>
